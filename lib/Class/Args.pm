@@ -11,7 +11,7 @@ our @EXPORT = qw(
 our @EXPORT_OK = qw(
 	a
 );
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 my %selves;
@@ -104,14 +104,14 @@ Class::Args - Write and Call methods in your style.
 
 B<There's more than one way to do it!>
 
- There are object oriented style and procedural style in this world.
+There are object oriented style and procedural style in this world.
 But if you are using Class::Args, you can write methods in your favorite style
 and users can call it in their favorite style. 
 
 
 =head2 EXPORT
 
- Function "args" was imported by default.
+Function "args" was imported by default.
 B<If you don't want to import it>, write as below:
 
 
@@ -127,20 +127,20 @@ and in function write as below:
   }
 
 
- Instead of writing "Class::Args::args(@_)", you can write "Class::Args::a(@_)".
+Instead of writing "Class::Args::args(@_)", you can write "Class::Args::a(@_)".
 I don't like to write long chars.
 This is why I named this module not "Class::Argument" but "Class::Args".
 
 
 =head1 FUNCTIONS
 
-=head2 args();
+=head2 args()
  
   my ($self, $arg1, $arg2) = args(@_);
   # or 
   my ($self, @args) = args(@_);
  
- Adjust function arguments.
+Adjust function arguments.
 Always function receives blessed hash reference ($self) as first argument.
 Class::Args creates and supplies it if first argument is not $self.
 Auto-created $self is cached so three calling styles as below are equal.
@@ -159,11 +159,11 @@ Of course, $self will be different if function was called in object oriented sty
   $obj2->func('foo', 'bar');
 
 
- Notice that auto-created $self is not initialized.
+Notice that auto-created $self is not initialized.
 It is created as an empty blessed hash reference.
 
 
-=head2 a
+=head2 a()
 
 Alias of "args".
 
@@ -172,7 +172,7 @@ Alias of "args".
 
 =head1 TO DO
 
- I will make option which create object ( do "new Some::Module" ) and set it in
+I will make option which create object ( do "new Some::Module" ) and set it in
 auto-created $self instead empty hash reference.
 
 
@@ -181,6 +181,9 @@ auto-created $self instead empty hash reference.
 =head1 AUTHOR
 
 Kagurazaka Mahito , E<lt> mahito@cpan.org E<gt>
+
+http://www.ornithopter.jp/
+
 
 =head1 COPYRIGHT AND LICENSE
 
